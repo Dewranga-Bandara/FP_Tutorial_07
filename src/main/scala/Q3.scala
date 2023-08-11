@@ -4,12 +4,8 @@ object Q3 {
     else if (n <= 3) true
     else if (n % 2 == 0 || n % 3 == 0) false
     else {
-      var i = 5
-      while (i * i <= n) {
-        if (n % i == 0 || n % (i + 2) == 0) return false
-        i += 6
-      }
-      true
+      val sqrtN = Math.sqrt(n).toInt
+      !(2 to sqrtN).exists(x => n % x == 0)
     }
   }
 
